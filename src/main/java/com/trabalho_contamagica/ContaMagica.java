@@ -20,7 +20,7 @@ public class ContaMagica {
         return this.status;
     }
 
-    public void setStatusDepositando() {
+    public void setStatus() {
         if ((this.getSaldo() >= 50000 && this.getStatus() == this.SILVER) || (this.getSaldo() < 100000 && this.getStatus() == this.PLATINUM)) {
             this.status = this.GOLD;
         } else if (this.getSaldo() >= 200000 && this.getStatus() == this.GOLD) {
@@ -32,21 +32,17 @@ public class ContaMagica {
         }
     }
 
-    public void setStatusRetirando() {
-
-    }
-
     public void deposito(int valor) throws OperacaoInvalidaException{
         try {
             if (this.getStatus() == this.SILVER && valor >= 0) {
                 this.saldo = this.getSaldo() + valor;
-                setStatusDepositando();
+                setStatus();
             } else if (this.getStatus() == this.GOLD && valor >= 0) {
                 this.saldo = this.getSaldo() + valor + (valor * 0.01);
-                setStatusDepositando();
+                setStatus();
             } else if (this.getStatus() == this.PLATINUM && valor >= 0) {
                 this.saldo = this.getSaldo() + valor + (valor * 0.025);
-                setStatusDepositando();
+                setStatus();
             } else {
                 throw new OperacaoInvalidaException(valor);
             }
