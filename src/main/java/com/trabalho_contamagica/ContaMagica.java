@@ -54,9 +54,10 @@ public class ContaMagica {
 
     public void retirada(int valor) throws OperacaoInvalidaException {
         try {
-            if (valor >= 0) {
-                if (this.getStatus() >= 0 && this.getStatus() <= 2 && this.getSaldo() >= valor) {
-
+            if (valor >= 0 && valor <= this.getSaldo()) {
+                if (this.getStatus() >= this.SILVER && this.getStatus() <= this.PLATINUM) {
+                    this.saldo = this.getSaldo() - valor;
+                    setStatus();
                 }
             } else {
                 throw new OperacaoInvalidaException(valor);
