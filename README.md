@@ -55,6 +55,10 @@ P5 = [25000, 99999] -> testar {50.000} //Conta GOLD
 
 P6 = [0, 49999] -> testar {52.001, 75.000} //Conta SILVER
 
+- Análise com o CodeCoverage
+
+De acordo com a análise de cobertura de código, depois de eu ter concluído todos os testes, meu código ficou com uma cobertura de 92%, faltando a penas cobrir o método toString() que não julguei necessário testar:
+
 Link da tarefa no GitHub: https://github.com/jonathanCB/Tarefa_TesteUnitario-ContaMagica
 
 Link para o relatório completo com os casos de teste e resultados esperados: https://drive.google.com/open?id=10oheFWal2WlY2tPsn1cLYvNrZCwO1Rr3
