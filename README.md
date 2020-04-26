@@ -1,6 +1,5 @@
 # Tarefa_TesteUnitario-ContaMagica
-Relatório está compartilhado no Google Drive. É só clicar no link ao lado ->
-Jonathan, Alisson, Josias
+
 Estratégia de testes utilizadas
 - Particionamento do espaço de entrada
   Consiste em identificar as variáveis de entrada.
