@@ -59,4 +59,5 @@ Obs:  Devido a meu problema com a pasta "jacoco" para a utilização do CodeCove
 A pasta jacoco simplesmente não foi criada pelo meu Maven e pesquisando não consegui achar outra forma de utilizá-lo.
 
 Link da tarefa no GitHub: https://github.com/jonathanCB/Tarefa_TesteUnitario-ContaMagica
+
 Link para o relatório completo com os casos de teste e resultados esperados: https://drive.google.com/file/d/1bt8Ej9ejPxe3yyPYi6b6RQ_1mTP5RIoe/view
