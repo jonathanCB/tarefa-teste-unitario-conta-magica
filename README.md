@@ -61,4 +61,4 @@ De acordo com a análise de cobertura de código, depois de eu ter concluído to
 
 Link da tarefa no GitHub: https://github.com/jonathanCB/Tarefa_TesteUnitario-ContaMagica
 
-Link para o relatório completo com os casos de teste e resultados esperados: https://drive.google.com/open?id=10oheFWal2WlY2tPsn1cLYvNrZCwO1Rr3
+Link para o relatório completo com os casos de teste e resultados esperados: https://drive.google.com/file/d/10oheFWal2WlY2tPsn1cLYvNrZCwO1Rr3/view
