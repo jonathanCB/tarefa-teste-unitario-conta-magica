@@ -7,6 +7,11 @@ public class ContaMagica {
     private double saldo;
     private int status;
     
+    //Método para inicializar a conta com o saldo que eu quiser.
+    public void setSaldo(double valor){
+        this.saldo = valor;
+    }
+
     public ContaMagica() {
         this.saldo = 0;
         this.status = SILVER;
