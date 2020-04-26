@@ -15,11 +15,13 @@ Exercício:
 SILVER (0) = [1 – 49.999] (Sem rendimentos);
 GOLD (1) = [50.000 – 199.999] (Cada depósito rende 1% do valor depositado);
 PLATINUM (3) = [200.000 – ∞] (Cada depósito rende 2,5% do valor depositado);
+
 Nossos casos de teste para depósitos em contas com saldo >= 0 && < 50.000 onde o status da conta = SILVER:
 P1 = [1, 49999] -> testar {0, 30.000, 49.999} //Conta SILVER 
 P2 = [50000, 199999] -> testar {50.000, 199.999} //Conta GOLD
 P3 = [200000, ∞] -> testar {200.000, 999.999} //Conta GOLD
 P4 = [-∞] //Registro inválido (número negativo)
+
 Nossos casos de teste para depósitos em contas com saldo >= 50.000, onde o status da conta = GOLD:
 P5 = [50000, 199999] -> testar {100, 148.000} //Conta GOLD
 P6 = [200000, ∞] -> testar {150.000, 999.999} //Conta PLATINUM
