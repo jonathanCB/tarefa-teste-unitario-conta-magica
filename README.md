@@ -47,7 +47,7 @@ P2 = [25000, 99999] -> testar {900.001, 975.000} //Conta GOLD
 P3 = [0, 24999] -> testar {975.001, 1.000.000} //Conta GOLD
 
 P4 = [-∞, +∞] -> testar {-9999, -1, 2.000.000} //Registro inválido (número negativo ou saldo insuficiente)
-
+.
 
 Nossos casos de teste para saques em contas com saldo < 75.000, onde o status da conta = GOLD:
 
