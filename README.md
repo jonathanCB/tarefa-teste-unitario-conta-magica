@@ -55,9 +55,6 @@ P5 = [25000, 99999] -> testar {50.000} //Conta GOLD
 
 P6 = [0, 49999] -> testar {52.001, 75.000} //Conta SILVER
 
-Obs:  Devido a meu problema com a pasta "jacoco" para a utilização do CodeCoverage, não consegui usá-lo para verificar a cobertura de código.
-A pasta jacoco simplesmente não foi criada pelo meu Maven e pesquisando não consegui achar outra forma de utilizá-lo.
-
 Link da tarefa no GitHub: https://github.com/jonathanCB/Tarefa_TesteUnitario-ContaMagica
 
-Link para o relatório completo com os casos de teste e resultados esperados: https://drive.google.com/file/d/1bt8Ej9ejPxe3yyPYi6b6RQ_1mTP5RIoe/view
+Link para o relatório completo com os casos de teste e resultados esperados: https://drive.google.com/open?id=10oheFWal2WlY2tPsn1cLYvNrZCwO1Rr3
