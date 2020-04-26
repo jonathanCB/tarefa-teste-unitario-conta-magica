@@ -9,6 +9,8 @@ public class ContaMagicaTest {
     private ContaMagica contaComSaldo0;
     private ContaMagica contaComSaldo50000;
     private ContaMagica contaComSaldo200000;
+    private ContaMagica contaComSaldoUmMi;
+    private ContaMagica contaComSaldoDe75000;
 
     @BeforeEach
     public void setup(){
@@ -16,6 +18,9 @@ public class ContaMagicaTest {
         contaComSaldo0 = new ContaMagica();
         contaComSaldo50000 = new ContaMagica();
         contaComSaldo200000 = new ContaMagica();
+        //*** Inicializando Objeto para teste do método retirada() *** */
+        contaComSaldoUmMi = new ContaMagica();
+        contaComSaldoDe75000 = new ContaMagica();
 
         /*Não precisararia setar o saldo da conta com 0 
         por que cada conta criada já inicia com saldo = 0 
@@ -24,7 +29,8 @@ public class ContaMagicaTest {
 
         /*Aqui, estamos setando o saldo = 50000 e estamos
         chamando o setStatus() para podermos simular
-        que já foi feito pelo menos um depósito na conta.*/
+        que já foi feito pelo menos um depósito na conta e ela 
+        ficar como GOLD.*/
         contaComSaldo50000.setSaldo(50000);
         contaComSaldo50000.setStatus();
 
@@ -35,6 +41,19 @@ public class ContaMagicaTest {
         contaComSaldo200000.setStatus();
         contaComSaldo200000.setStatus();
 
+         /*Aqui vamos criar uma conta com saldo = 1000000 e
+        simular pelo menos dois depósitos chamando o 
+        setStatus() duas vezes para a conta ficar como PLATINUM.*/
+        contaComSaldoUmMi.setSaldo(1000000);
+        contaComSaldoUmMi.setStatus();
+        contaComSaldoUmMi.setStatus();
+
+         /*Aqui, estamos setando o saldo = 75000 e estamos
+        chamando o setStatus() para podermos simular
+        que já foi feito pelo menos um depósito na conta e ela 
+        ficar como GOLD.*/
+        contaComSaldoDe75000.setSaldo(75000);
+        contaComSaldoDe75000.setStatus();
     }
 
     //**********  TESTANDO MÉTODOS DE DEPÓSITO P1 ************
@@ -341,5 +360,191 @@ public class ContaMagicaTest {
 
         //*********  TESTANDO MÉTODOS DE RETIRADA/SAQUE P1 **********
 
+        //Testando com depósito de R$400000
+        @Test
+        public void test18(){
+            try {
+                contaComSaldoUmMi.retirada(400000);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(600000, saldo);
+                assertEquals(2, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
 
+        //Testando com depósito de R$900000
+        @Test
+        public void test19(){
+            try {
+                contaComSaldoUmMi.retirada(900000);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(100000, saldo);
+                assertEquals(2, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+        // ******* FIM DOS TESTES DO MÉTODO DE RETIRADA/SAQUE P1 *********
+
+        //___________________________________________________________
+
+        //*********  TESTANDO MÉTODOS DE RETIRADA/SAQUE P2 **********
+
+        //Testando com depósito de R$900001
+        @Test
+        public void test20(){
+            try {
+                contaComSaldoUmMi.retirada(900001);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(99999, saldo);
+                assertEquals(1, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        //Testando com depósito de R$975000
+        @Test
+        public void test21(){
+            try {
+                contaComSaldoUmMi.retirada(975000);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(25000, saldo);
+                assertEquals(1, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        // ******* FIM DOS TESTES DO MÉTODO DE RETIRADA/SAQUE P2 *********
+
+        //___________________________________________________________
+
+        //*********  TESTANDO MÉTODOS DE RETIRADA/SAQUE P3 **********
+
+        //Testando com depósito de R$975001
+        @Test
+        public void test22(){
+            try {
+                contaComSaldoUmMi.retirada(975001);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(24999, saldo);
+                assertEquals(1, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        //Testando com depósito de R$1000000
+        @Test
+        public void test23(){
+            try {
+                contaComSaldoUmMi.retirada(1000000);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(0, saldo);
+                assertEquals(1, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        // ******* FIM DOS TESTES DO MÉTODO DE RETIRADA/SAQUE P3 *********
+
+        //___________________________________________________________
+
+        //*********  TESTANDO MÉTODOS DE RETIRADA/SAQUE P4 **********
+
+        //Testando com depósito de -R$9999
+        @Test
+        public void test24(){
+            try {
+                contaComSaldoUmMi.retirada(-9999);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(1000000, saldo);
+                assertEquals(2, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        //Testando com depósito de -R$1
+        @Test
+        public void test25(){
+            try {
+                contaComSaldoUmMi.retirada(-1);
+                double saldo = contaComSaldoUmMi.getSaldo();
+                int status = contaComSaldoUmMi.getStatus();
+                assertEquals(1000000, saldo);
+                assertEquals(2, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        // ******* FIM DOS TESTES DO MÉTODO DE RETIRADA/SAQUE P4 *********
+
+        //___________________________________________________________
+
+        //*********  TESTANDO MÉTODOS DE RETIRADA/SAQUE P5 **********
+
+        //Testando com depósito de R$50000
+        @Test
+        public void test26(){
+            try {
+                contaComSaldoDe75000.retirada(50000);
+                double saldo = contaComSaldoDe75000.getSaldo();
+                int status = contaComSaldoDe75000.getStatus();
+                assertEquals(25000, saldo);
+                assertEquals(1, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        //Testando com depósito de R$50001
+        @Test
+        public void test27(){
+            try {
+                contaComSaldoDe75000.retirada(50001);
+                double saldo = contaComSaldoDe75000.getSaldo();
+                int status = contaComSaldoDe75000.getStatus();
+                assertEquals(24999, saldo);
+                assertEquals(0, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
+
+        //Testando com depósito de R$75000
+        @Test
+        public void test28(){
+            try {
+                contaComSaldoDe75000.retirada(75000);
+                double saldo = contaComSaldoDe75000.getSaldo();
+                int status = contaComSaldoDe75000.getStatus();
+                assertEquals(0, saldo);
+                assertEquals(0, status);
+            } catch (Exception e) {
+                System.out.println("Erro.");
+                e.printStackTrace();
+            }
+        }
 }
