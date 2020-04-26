@@ -13,7 +13,9 @@ Exercício:
 - A verificação de “upgrade” da conta se dá via operação de depósito, e não é possível que um cliente faça “upgrade” diretamente de “Silver” para “Platinum” em uma única operação, portanto, a conta tem de ser GOLD para poder passar para PLATINUM.
 
 SILVER (0) = [1 – 49.999] (Sem rendimentos);
+
 GOLD (1) = [50.000 – 199.999] (Cada depósito rende 1% do valor depositado);
+
 PLATINUM (3) = [200.000 – ∞] (Cada depósito rende 2,5% do valor depositado);
 
 Nossos casos de teste para depósitos em contas com saldo >= 0 && < 50.000 onde o status da conta = SILVER:
