@@ -1,4 +1,4 @@
-# Tarefa_TesteUnitario-ContaMagica
+# Tarefa - Teste Unitário - Conta Mágica
 
 Estratégia de testes utilizadas
 - Particionamento do espaço de entrada
